@@ -123,6 +123,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
+  /* Shared, accessible social media icons for every page footer and Contact page. */
+  var socialProfiles = [
+    { name: "Instagram", url: "https://www.instagram.com/vikrisrijan/", icon: "instagram.svg" },
+    { name: "Facebook", url: "https://www.facebook.com/vikrisrijan", icon: "facebook.svg" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/company/vikrisrijan/", icon: "linkedin.svg" },
+    { name: "X", url: "https://x.com/vikrisrijan", icon: "x.svg" }
+  ];
+
+  function buildSocialLinks(className) {
+    var list = document.createElement("div");
+    list.className = "social-links " + className;
+    list.setAttribute("aria-label", "Vikri social media profiles");
+
+    socialProfiles.forEach(function (profile) {
+      var link = document.createElement("a");
+      link.href = profile.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", "Vikri on " + profile.name);
+      link.title = profile.name;
+
+      var icon = document.createElement("img");
+      icon.src = "/images/social/" + profile.icon;
+      icon.alt = "";
+      icon.setAttribute("aria-hidden", "true");
+      icon.width = 18;
+      icon.height = 18;
+
+      link.appendChild(icon);
+      list.appendChild(link);
+    });
+
+    return list;
+  }
+
+  document.querySelectorAll(".site-footer .footer-brand").forEach(function (brand) {
+    if (!brand.querySelector(".social-links")) {
+      brand.appendChild(buildSocialLinks("social-links--footer"));
+    }
+  });
+
+  document.querySelectorAll("[data-social-links]").forEach(function (container) {
+    if (!container.querySelector(".social-links")) {
+      container.appendChild(buildSocialLinks("social-links--contact"));
+    }
+  });
+
   /* track outbound click events (WhatsApp / phone / catalogue) — fires only
      if GA4 is configured and gtag is loaded. */
   document.querySelectorAll("[data-track]").forEach(function (el) {
