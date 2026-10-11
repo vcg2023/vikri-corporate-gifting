@@ -244,7 +244,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--clay);outline-offse
 .site-footer a:hover{color:#F6F1E6;}
 .footer-brand{font-family:'Fraunces',serif;font-size:1.6rem;color:#F6F1E6;}
 .footer-logo{height:42px;width:auto;display:block;}
-.footer-bottom{border-top:1px solid #3A342F;margin-top:56px;padding-top:22px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:.8rem;color:#8A8270;}
+.footer-bottom{border-top:1px solid #3A342F;margin-top:56px;padding-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;font-size:.8rem;color:#8A8270;}
 
 /* whatsapp float */
 .wa-float{
@@ -287,7 +287,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--clay);outline-offse
   flex-wrap:wrap;
   gap:10px;
 }
-.social-links--footer{margin-top:14px;}
+.social-links--footer{margin-top:0; margin-left:auto;}
 .social-links--contact{margin-top:10px;}
 .social-links a{
   display:inline-flex;
