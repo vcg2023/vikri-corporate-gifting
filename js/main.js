@@ -129,7 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "Instagram", url: "https://www.instagram.com/vikrisrijan/", icon: "instagram.svg" },
     { name: "Facebook", url: "https://www.facebook.com/vikrisrijan", icon: "facebook.svg" },
     { name: "LinkedIn", url: "https://www.linkedin.com/company/vikrisrijan/", icon: "linkedin.svg" },
-    { name: "X", url: "https://x.com/vikrisrijan", icon: "x.svg" }
+    { name: "X", url: "https://x.com/vikrisrijan", icon: "x.svg" },
+    { name: "YouTube", url: "https://www.youtube.com/@vikrisrijan", icon: "youtube.svg" }
   ];
 
   function buildSocialLinks(className) {
@@ -159,9 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return list;
   }
 
-  document.querySelectorAll(".site-footer .footer-brand").forEach(function (brand) {
-    if (!brand.querySelector(".social-links")) {
-      brand.appendChild(buildSocialLinks("social-links--footer"));
+  document.querySelectorAll(".site-footer .footer-bottom").forEach(function (footerBottom) {
+    if (!footerBottom.querySelector(".social-links")) {
+      footerBottom.appendChild(buildSocialLinks("social-links--footer"));
     }
   });
 
