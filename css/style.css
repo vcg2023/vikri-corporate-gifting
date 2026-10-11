@@ -278,3 +278,54 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--clay);outline-offse
   padding:12px 20px;font-weight:600;font-size:.9rem;border-radius:0 0 4px 0;
 }
 .skip-link:focus{left:0;}
+
+
+/* Social media icon links — shared footer and contact page */
+.social-links{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.social-links--footer{margin-top:14px;}
+.social-links--contact{margin-top:10px;}
+.social-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border:1px solid rgba(69,79,60,.24);
+  border-radius:50%;
+  background:rgba(69,79,60,.06);
+  transition:background-color .15s ease,transform .15s ease,border-color .15s ease;
+}
+.social-links a:hover{
+  background:rgba(69,79,60,.14);
+  border-color:var(--forest);
+  transform:translateY(-2px);
+}
+.social-links a:focus-visible{
+  outline:2px solid var(--clay);
+  outline-offset:3px;
+}
+.social-links img{
+  display:block;
+  width:18px;
+  height:18px;
+  object-fit:contain;
+}
+.site-footer .social-links a{
+  border-color:rgba(246,241,230,.28);
+  background:rgba(246,241,230,.08);
+}
+.site-footer .social-links a:hover{
+  border-color:#F6F1E6;
+  background:rgba(246,241,230,.18);
+}
+.site-footer .social-links img{filter:brightness(0) invert(1);}
+@media (max-width:520px){
+  .social-links{gap:12px;}
+  .social-links a{width:40px;height:40px;}
+  .social-links img{width:19px;height:19px;}
+}
