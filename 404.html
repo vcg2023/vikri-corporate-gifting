@@ -154,5 +154,23 @@
 <script src="js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
+
+<script>
+/* Recover visitors arriving from the previous Wix URL structure.
+   GitHub Pages does not support server-side 301 rules in a _redirects file. */
+(function () {
+  var legacy = {
+    "/product-page/jute-flower-everlasting-lotus-stand-bouquet": "/sustainable-bouquets.html",
+    "/product-page/five-rose-stand-bouquet": "/sustainable-bouquets.html",
+    "/product-page/jute-flower-everlasting-net-stand-bouquet": "/sustainable-bouquets.html",
+    "/shop/ols/categories/handmade-jewellery": "/products.html"
+  };
+  var destination = legacy[window.location.pathname.replace(/\/$/, "")];
+  if (destination) {
+    window.location.replace(destination);
+  }
+})();
+</script>
+
 </body>
 </html>
